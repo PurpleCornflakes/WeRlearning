@@ -34,12 +34,8 @@ def next_x(x0 = 0.1, r = 0.9):
 
 def extract(x0, r, n, m):
 	xx = next_x(x0 = x0, r = r)
-	for i in range(n-1):
-		xx.__next__()
-	result = []
-	for i in range(m-n+1):
-		result.append(xx.__next__())
-	return result
+	ans = it.islice(xx, n, m)
+	return ans
 
 def feignbaum():
 	fig2, ax2 = plt.subplots()
